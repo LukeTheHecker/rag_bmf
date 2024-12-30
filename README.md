@@ -18,7 +18,7 @@ python main.py
 ## Explanation of the code
 
 ### Reading the PDFs
-PDFs are read using the `PyMuPDF` library. Segments are extracted using several heuristics to detect:
+PDFs are read using the [PyMuPDF](https://github.com/pymupdf/PyMuPDF) library. Segments are extracted using several heuristics to detect:
 - paragraphs
 - headings
 - broken paragraphs on new pages
@@ -32,7 +32,7 @@ An embedding model from the Hugging Face library is used to embed the segments (
 The embeddings are pre-computed using [this script](scripts/compute_segment_embeddings.py) and can be found in the `data/segments/segments_with_embeddings.pkl` file.
 
 ### Database
-The chromadb library is utilized to enable efficient storage of embeddings, text, and metadata in Python, ensuring minimal overhead.
+The [chromadb](https://github.com/chroma-core/chroma) library is utilized to enable efficient storage of embeddings, text, and metadata in Python, ensuring minimal overhead.
 
 ### Retrieval and Generation
 The query is encoded using an embedding model, and the top 5 matches are retrieved based on cosine similarity using HNSW (Hierarchical Navigable Small World), an approximate nearest neighbor approach that balances speed and accuracy. These matches are sent to the LLM as context for generation, which is performed using the GPT-4o model from the OpenAI library. If the query cannot be answered with the provided context, the LLM is instructed to return certain keyword which triggers a retry.
@@ -57,8 +57,7 @@ In production we would probably have more than four PDFs to work with. Therefore
 * Use a vector database like postgres pgvector for storing the embeddings for a more scalable solution
 
 ### Generation
-Due to its easily accessible API, I used the `GPT-4o` model from the OpenAI library. This might not be an option for clients with data privacy obligations. In this case, open source models from Meta (llama family) or from Mistral AI. These models can be accessed through self-hosting (high data privacy, high cost) or using third parties (lower cost, data privacy needs to be assessed.).
+Due to its easily accessible API, I used the `GPT-4o` model from the OpenAI library. This might not be an option for clients with data privacy obligations. In this case, open source models from Meta (Llama family) or from Mistral AI are recommended. These models can be accessed through self-hosting (high data privacy, high cost) or using third parties (lower cost, data privacy needs to be assessed.).
 
 ### Testing
 Writing tests for various components is crucial to ensure a robust system.
-
