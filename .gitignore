@@ -2,6 +2,6 @@
 *.pkl
 *.pyc
 
-data
+# data
 venv
 chroma_db
