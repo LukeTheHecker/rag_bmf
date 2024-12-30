@@ -1,5 +1,6 @@
 # README
 Retrieval Augmented Generation (RAG) for BMF.
+
 By [Lukas Hecker](https://github.com/lukethehecker).
 
 ## Installation
