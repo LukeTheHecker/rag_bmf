@@ -1,0 +1,7 @@
+*.csv
+*.pkl
+*.pyc
+
+data
+venv
+chroma_db
