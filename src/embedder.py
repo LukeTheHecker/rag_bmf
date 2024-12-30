@@ -29,9 +29,8 @@ class Embedder:
 
         return embeddings
     
-    def embed_documents(self, documents, batch_size=100):
+    def embed_documents(self, documents, batch_size=16):
         embeddings = np.zeros((len(documents), self.embed_dim))
-        print(embeddings.shape)
         for i in range(0, len(documents), batch_size):
             print(f"Embedding batch {i//batch_size+1} of {len(documents)//batch_size}")
             batch = documents[i:i+batch_size]
@@ -50,8 +49,6 @@ class Embedder:
                 embeddings_new = embeddings_new / np.linalg.norm(embeddings_new, axis=1, keepdims=True)
 
             
-            # print("i=", i, "batch_size=", batch_size, "i+batch_size=", i+batch_size)
-            # print(embeddings[i:i+batch_size].shape, embeddings.shape)
             embeddings[i:i+batch_size] = embeddings_new
 
         return embeddings

@@ -5,7 +5,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
-from constants import EMBEDDER_MODEL, NORMALIZE_EMBEDDINGS
+from settings import EMBEDDER_MODEL, NORMALIZE_EMBEDDINGS
 from src.embedder import Embedder
 import json
 import pickle as pkl

@@ -2,7 +2,7 @@ import chromadb
 from chromadb.config import Settings
 import numpy as np
 from typing import List, Optional
-from constants import PATH_SEGMENTS
+from settings import PATH_SEGMENTS
 from .data_models import Document
 import pickle as pkl
 

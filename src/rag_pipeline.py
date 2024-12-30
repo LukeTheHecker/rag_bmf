@@ -1,7 +1,7 @@
 from .embedder import Embedder
 from .prompt_constructor import PromptConstructor
 from .chatgpt_client import ChatGPTClient
-from constants import (EMBEDDER_MODEL, NORMALIZE_EMBEDDINGS, 
+from settings import (EMBEDDER_MODEL, NORMALIZE_EMBEDDINGS, 
                         DOCUMENT_LIMIT, EXTRA_CONTEXT)
 from .document_database_2 import DocumentDatabase
 

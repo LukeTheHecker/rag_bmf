@@ -4,7 +4,7 @@ from pathlib import Path
 # Add the project root directory to Python path
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
-from constants import MIN_CHARS_PER_CHUNK
+from settings import MIN_CHARS_PER_CHUNK
 
 import pymupdf
 import uuid

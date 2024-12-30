@@ -1,5 +1,5 @@
 import openai
-from constants import OPENAI_API_KEY, OPENAI_MODEL_NAME, TEMPERATURE, MAX_TOKENS
+from settings import OPENAI_API_KEY, OPENAI_MODEL_NAME, TEMPERATURE, MAX_TOKENS
 from .prompts import SYSTEM_PROMPT
 
 # Check if the OPENAI_API_KEY is set in the constants.py file

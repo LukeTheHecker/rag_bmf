@@ -4,7 +4,7 @@ import pickle as pkl
 from docarray import DocList
 from docarray.index import InMemoryExactNNIndex
 from typing import List
-from constants import PATH_SEGMENTS
+from settings import PATH_SEGMENTS
 from .data_models import Document
 
 
